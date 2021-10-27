@@ -1,0 +1,44 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <mat-card-title class="alert alert-primary">Old Book</mat-card-title>
+                <div *ngIf="book">
+                    <b>Name </b>
+                    <i style="color: #f92672">{{book.title}}</i><br>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12" style="margin-top: 20px">
+            <mat-card style="margin: 50px 0">
+                <form class="edit-book" #f="ngForm" (ngSubmit)="ngSubmit()" >
+
+                    <mat-error >{{status}}</mat-error>
+
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Title</mat-label>
+                        <input matInput name="title" [(ngModel)]="book.title" >
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Author</mat-label>
+                        <input matInput name="author" [(ngModel)]="book.author"  >
+                    </mat-form-field>
+
+                    <mat-form-field style="width: 350px" appearance="outline">
+                        <mat-label>Description</mat-label>
+                        <input matInput name="gender" [(ngModel)]="book.description"   >
+                    </mat-form-field>
+
+
+                    <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-primary">Update Book
+                    </button>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</div>
